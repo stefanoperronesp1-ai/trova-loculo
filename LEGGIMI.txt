@@ -1,0 +1,49 @@
+TROVA LOCULO — navigatore per cimiteri
+=====================================
+
+Cosa c'è nella cartella
+-----------------------
+index.html            l'app (tutto in un file)
+sw.js                 fa funzionare l'app senza internet
+manifest.webmanifest  permette di installarla come app sul telefono
+icon-192.png / icon-512.png   icone
+cimiteri/             qui vanno i pacchetti dei cimiteri (es. cimiteri/maiera.json)
+
+1. Pubblicare l'app (una volta sola, gratis)
+-------------------------------------------
+GPS, bussola e fotocamera funzionano solo su un indirizzo https.
+Il modo più semplice e stabile è GitHub Pages:
+  a) crea un account su github.com e un nuovo repository, es. "trova-loculo" (pubblico);
+  b) "Add file" > "Upload files": trascina TUTTO il contenuto di questa cartella;
+  c) Settings > Pages > Branch: main, cartella / (root) > Save;
+  d) dopo un minuto l'app è su  https://TUONOME.github.io/trova-loculo/
+Apri l'indirizzo dal telefono e scegli "Installa app" / "Aggiungi a schermata Home".
+
+2. Rilievo sul campo
+--------------------
+- Open Camera: Impostazioni > Location settings > attiva "Store location data"
+  e "Store compass direction".
+- Fotografa ogni lapide stando di fronte, a 1–2 m, con GPS stabile.
+- Nell'app: Rilievo > crea il cimitero > "Dalla galleria" e scegli le foto.
+  Se le coordinate risultano "senza GPS", reimporta con "Da File" aprendo
+  la cartella DCIM/OpenCamera (alcune gallerie Android tolgono la posizione).
+- Compila le schede: "Salva e prossima" passa alla successiva da compilare.
+- Per un punto incerto: "Usa la mia posizione" (media di 12 s) oppure tocca la mappa.
+
+3. Mettere online il cimitero e stampare il QR
+----------------------------------------------
+- Rilievo > "Esporta pacchetto": ottieni il file CODICE.json (schede + foto).
+- Caricalo su GitHub nella cartella cimiteri/ (es. cimiteri/maiera.json).
+- Rilievo > "QR per l'ingresso": scrivi l'indirizzo dell'app e salva il cartello PNG.
+  Il QR apre  https://TUONOME.github.io/trova-loculo/?c=CODICE
+- Chi inquadra il QR scarica il cimitero una volta; poi funziona anche senza rete.
+- Per aggiornare: modifica le schede, esporta di nuovo e sostituisci il file .json.
+
+Precisione
+----------
+Il GPS dei telefoni sbaglia di solito 3–5 m all'aperto, di più vicino ai muri alti
+dei loculi. La freccia porta davanti al muro giusto; foto, fila (contata dal basso)
+e numero servono per gli ultimi metri.
+
+Nota: se il servizio è offerto per conto di un Comune, conviene concordare con
+l'ufficio la pubblicazione di nomi e foto delle lapidi.
